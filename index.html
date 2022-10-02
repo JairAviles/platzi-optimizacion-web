@@ -29,33 +29,36 @@
     <title>PlatziVideo</title>
   </head>
   <body>
-    <header>
-      <div class="logo"></div>
-      <div class="menu">
-        <div>
-          <img src="assets/user-icon.png" alt="" />
+    <header class="header">
+      <div class="header__logo">
+        <img width="200px" height="61px" src="/assets/logo-platzi-video.png" alt="Company logo">
+      </div>
+      <div class="header__menu">
+        <div class="header__menu__div">
+          <img class="header__menu__img" src="assets/user-icon.png" alt="" />
           <p>Perfil</p>
         </div>
-        <ul>
-          <li><a href="/">Cuenta</a></li>
+        <ul class="header__menu__ul">
+          <li class="header__menu__li"><a class="header__menu__li__a" href="/">Cuenta</a></li>
         </ul>
       </div>
     </header>
 
     <section class="main">
-      <h2>¿Qué quieres ver hoy?</h2>
-      <input type="text" class="search-input" placeholder="Buscar..." />
+      <h2 class="main__h2">¿Qué quieres ver hoy?</h2>
+      <input type="text" class="main__search-input" placeholder="Buscar..." />
     </section>
 
-    <footer>
-      <p>
+    <footer class="footer">
+      <p class="footer__p">
         Projecto del curso de
         <a href="https://platzi.com/optimizacion-web" target="_blank"
           >Optimización Web de Platzi</a
         >
         dictado con el
-        <i title="Corazón, como sentimiento, en Japonés">kokoro</i> por
+        <i class="footer__i" title="Corazón, como sentimiento, en Japonés">kokoro</i> por
         <a
+          class="footer__a"
           href="http://twitter.com/jonalvarezz"
           target="_blank"
           title="Twitter del profesor Jonathan Alvarez"
