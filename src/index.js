@@ -1,6 +1,9 @@
 import h from 'hyperscript'
 import { fetchPopular, fetchHighestRated, fetchTrending } from './api'
 import CarouselItem from './CarouselItem'
+import LazyLoad from 'vanilla-lazyload'
+
+const lazyLazy = new LazyLoad()
 
 const SectionTitle = title => h('h3.carousel__title', title)
 
@@ -58,4 +61,6 @@ const Carousel = ({ itemsList = [] }) =>
         itemsList: popular,
       })
     )
+
+  lazyLazy.update()
 })(document, window)
