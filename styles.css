@@ -2,6 +2,18 @@
  * Home page
  *******************************************
  */
+
+html {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/**
+ * https://github.com/typekit/webfontloader#events
+ */
+html.wf-active {
+  font-family: 'Muli';
+}
+
 body {
   margin: 0;
   background: #21c08b;

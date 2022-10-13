@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack -p"
   },
   "prettier": {
     "trailingComma": "es5",
