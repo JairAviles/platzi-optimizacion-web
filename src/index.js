@@ -1,5 +1,4 @@
 import h from 'hyperscript'
-import lozad from 'lozad'
 import { fetchPopular, fetchHighestRated, fetchTrending } from './api'
 import CarouselItem from './CarouselItem'
 import LazyLoad from 'vanilla-lazyload'

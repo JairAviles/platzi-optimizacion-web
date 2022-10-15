@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const path = require('path')
-const shouldAnalyze = process.argv.includes('--analyze')
 
 const nodeEnv = process.env.NODE_ENV || 'development'
 const shouldAnalyze = process.argv.includes('--analyze')
@@ -8,15 +7,6 @@ const plugins = []
 
 if (shouldAnalyze) {
   const { BundleAnalyzerPlugin } = module.require('webpack-bundle-analyzer')
-  plugins.push(new BundleAnalyzerPlugin())
-}
-
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin
-
-const plugins = []
-
-if (shouldAnalyze) {
   plugins.push(new BundleAnalyzerPlugin())
 }
 
