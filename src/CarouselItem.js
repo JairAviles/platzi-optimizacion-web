@@ -1,7 +1,9 @@
 import h from 'hyperscript'
-import moment from 'moment'
+import formatDistance from 'date-fns/formatDistance'
+import parseISO from 'date-fns/parseISO'
 
-const relativeDate = dateStr => moment(dateStr, 'YYYY-MM-DD').fromNow()
+const relativeDate = dateStr =>
+  formatDistance(parseISO(dateStr, 'YYYY-MM-DD'), new Date())
 
 const Controls = ({ slug, youtubeVideoId }) =>
   h(
@@ -44,11 +46,7 @@ const CarouselItem = ({
 }) =>
   h(
     'div.carousel-item',
-    h('img.carousel-item__img', {
-      alt: title,
-      'data-src': imageUrl,
-      'data-background-image': '/assets/carousel-item-placeholder.png',
-    }),
+    h('img.carousel-item__img.lazy', { 'data-src': imageUrl, alt: '' }),
     h(
       'div.carousel-item__details',
       Controls({ slug, youtubeVideoId }),

@@ -2,6 +2,9 @@ import h from 'hyperscript'
 import lozad from 'lozad'
 import { fetchPopular, fetchHighestRated, fetchTrending } from './api'
 import CarouselItem from './CarouselItem'
+import LazyLoad from 'vanilla-lazyload'
+
+const lazyLazy = new LazyLoad()
 
 const SectionTitle = title => h('h3.carousel__title', title)
 
@@ -60,8 +63,5 @@ const Carousel = ({ itemsList = [] }) =>
       })
     )
 
-  // Add lazy loading
-  const carouselImages = document.querySelectorAll('.carousel-item__img')
-  const observer = lozad(carouselImages)
-  observer.observe()
+  lazyLazy.update()
 })(document, window)
