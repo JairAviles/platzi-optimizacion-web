@@ -1,5 +1,6 @@
 import h from 'hyperscript'
 import { fetchPopular, fetchHighestRated, fetchTrending } from './api'
+import { modalListener } from './modal'
 import CarouselItem from './CarouselItem'
 import LazyLoad from 'vanilla-lazyload'
 
@@ -61,6 +62,13 @@ const Carousel = ({ itemsList = [] }) =>
         itemsList: popular,
       })
     )
+
+  document.body.addEventListener('click', event => {
+    const tagName = event.target.tagName
+    if (tagName === 'IMG' || tagName === 'A') {
+      modalListener(event)
+    }
+  })
 
   lazyLazy.update()
 })(document, window)
